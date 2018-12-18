@@ -3,7 +3,7 @@ import axios from "axios";
 import { Modal } from "antd";
 import Utils from "../utils/utils";
 export default class Axios {
-  //请求列表
+  //请求列表   就是看看vscode的git功能
   static requestList(_this, url, params) {
     var data = {
       params: params
