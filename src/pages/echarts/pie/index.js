@@ -1,233 +1,224 @@
-import React from 'react'
-import { Card } from 'antd'
-import ReactEcharts from 'echarts-for-react';
-import themeLight from '../themeLight'
+import React from "react";
+import { Card } from "antd";
+import ReactEcharts from "echarts-for-react";
+import themeLight from "../themeLight";
 // import echarts from 'echarts'
-import echarts from 'echarts/lib/echarts'
+import echarts from "echarts/lib/echarts";
 // 引入饼图和折线图
-import 'echarts/lib/chart/pie'
+import "echarts/lib/chart/pie";
 // 引入提示框和标题组件
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/title';
-import 'echarts/lib/component/legend';
-import 'echarts/lib/component/markPoint';
+import "echarts/lib/component/tooltip";
+import "echarts/lib/component/title";
+import "echarts/lib/component/legend";
+import "echarts/lib/component/markPoint";
 export default class Pie extends React.Component {
-
-  state = {}
+  state = {};
 
   componentWillMount() {
-    echarts.registerTheme('Imooc', themeLight);
+    echarts.registerTheme("Imooc", themeLight);
   }
   //扇形图
   getOption() {
     let option = {
       title: {
-        text: '筱_筱哀上班工作量',
+        text: "筱_筱哀上班工作量",
         //标题水平方向居中
-        x: 'center'
+        x: "center"
       },
       legend: {
-        orient: 'vertical',
+        orient: "vertical",
         right: 10,
         top: 20,
         bottom: 20,
-        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
       },
       tooltip: {
         //触发哪一项
-        trigger: 'item',
+        trigger: "item",
         formatter: "{a} <br/>{b} : {c} ({d}%)"
       },
       series: [
         {
-          name: '筱_筱哀敲代码时长',
-          type: 'pie',
-          radius: '55%',
-          center: [
-            '50%', '60%'
-          ],
+          name: "筱_筱哀敲代码时长",
+          type: "pie",
+          radius: "55%",
+          center: ["50%", "60%"],
           data: [
             {
               value: 1000,
-              name: '周一'
+              name: "周一"
             },
             {
               value: 1000,
-              name: '周二'
+              name: "周二"
             },
             {
               value: 2000,
-              name: '周三'
+              name: "周三"
             },
             {
               value: 1500,
-              name: '周四'
+              name: "周四"
             },
             {
               value: 3000,
-              name: '周五'
+              name: "周五"
             },
             {
               value: 2000,
-              name: '周六'
+              name: "周六"
             },
             {
               value: 1200,
-              name: '周日'
-            },
+              name: "周日"
+            }
           ],
           itemStyle: {
             emphasis: {
               shadowBlur: 10,
               shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
+              shadowColor: "rgba(0, 0, 0, 0.5)"
             }
           }
         }
       ]
-    }
+    };
     return option;
   }
   //环形图
   getOption2() {
     let option = {
       title: {
-        text: '筱_筱哀上班工作量',
-        x: 'center'
+        text: "筱_筱哀上班工作量",
+        x: "center"
       },
       legend: {
-        orient: 'vertical',
+        orient: "vertical",
         right: 10,
         top: 20,
         bottom: 20,
-        data: [
-          '周一',
-          '周二',
-          '周三',
-          '周四',
-          '周五',
-          '周六',
-          '周日'
-        ]
+        data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
       },
       tooltip: {
-        trigger: 'item',
+        trigger: "item",
         formatter: "{a} <br/>{b} : {c} ({d}%)"
       },
       series: [
         {
-          name: '筱_筱哀敲代码时长',
-          type: 'pie',
+          name: "筱_筱哀敲代码时长",
+          type: "pie",
           //控制内外环
-          radius: ['50%', '80%'],
-          center: [
-            '50%', '60%'
-          ],
+          radius: ["50%", "80%"],
+          center: ["50%", "60%"],
           data: [
             {
               value: 1000,
-              name: '周一'
-            }, {
+              name: "周一"
+            },
+            {
               value: 1000,
-              name: '周二'
-            }, {
+              name: "周二"
+            },
+            {
               value: 2000,
-              name: '周三'
-            }, {
+              name: "周三"
+            },
+            {
               value: 1500,
-              name: '周四'
-            }, {
+              name: "周四"
+            },
+            {
               value: 3000,
-              name: '周五'
-            }, {
+              name: "周五"
+            },
+            {
               value: 2000,
-              name: '周六'
-            }, {
+              name: "周六"
+            },
+            {
               value: 1200,
-              name: '周日'
+              name: "周日"
             }
           ],
           itemStyle: {
             emphasis: {
               shadowBlur: 10,
               shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
+              shadowColor: "rgba(0, 0, 0, 0.5)"
             }
           }
         }
       ]
-    }
+    };
     return option;
   }
   //南丁格尔图
   getOption3() {
     let option = {
       title: {
-        text: '筱_筱哀上班工作量',
-        x: 'center'
+        text: "筱_筱哀上班工作量",
+        x: "center"
       },
       legend: {
-        orient: 'vertical',
+        orient: "vertical",
         right: 10,
         top: 20,
         bottom: 20,
-        data: [
-          '周一',
-          '周二',
-          '周三',
-          '周四',
-          '周五',
-          '周六',
-          '周日'
-        ]
+        data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
       },
       tooltip: {
-        trigger: 'item',
+        trigger: "item",
         formatter: "{a} <br/>{b} : {c} ({d}%)"
       },
       series: [
         {
-          name: '筱_筱哀敲代码时长',
-          type: 'pie',
-          radius: '55%',
-          center: [
-            '50%', '50%'
-          ],
+          name: "筱_筱哀敲代码时长",
+          type: "pie",
+          radius: "55%",
+          center: ["50%", "50%"],
           data: [
             {
               value: 1000,
-              name: '周一'
-            }, {
+              name: "周一"
+            },
+            {
               value: 1000,
-              name: '周二'
-            }, {
+              name: "周二"
+            },
+            {
               value: 2000,
-              name: '周三'
-            }, {
+              name: "周三"
+            },
+            {
               value: 1500,
-              name: '周四'
-            }, {
+              name: "周四"
+            },
+            {
               value: 3000,
-              name: '周五'
-            }, {
+              name: "周五"
+            },
+            {
               value: 2000,
-              name: '周六'
-            }, {
+              name: "周六"
+            },
+            {
               value: 1200,
-              name: '周日'
+              name: "周日"
             }
             //对数据进行排序
-          ].sort(function (a, b) { return a.value - b.value; }),
-          roseType: 'radius',
+          ].sort(function(a, b) {
+            return a.value - b.value;
+          }),
+          roseType: "radius",
           //动画效果
-          animationType: 'scale',
-          animationEasing: 'elasticOut',
-          animationDelay: function (idx) {
+          animationType: "scale",
+          animationEasing: "elasticOut",
+          animationDelay: function(idx) {
             return Math.random() * 200;
           }
         }
       ]
-    }
+    };
     return option;
   }
 
@@ -240,7 +231,8 @@ export default class Pie extends React.Component {
             theme="Imooc"
             notMerge={true}
             lazyUpdate={true}
-            style={{ height: 500 }} />
+            style={{ height: 500 }}
+          />
         </Card>
         <Card title="饼形图之二" style={{ marginTop: 10 }}>
           <ReactEcharts
@@ -248,7 +240,8 @@ export default class Pie extends React.Component {
             theme="Imooc"
             notMerge={true}
             lazyUpdate={true}
-            style={{ height: 500 }} />
+            style={{ height: 500 }}
+          />
         </Card>
         <Card title="饼形图之三" style={{ marginTop: 10 }}>
           <ReactEcharts
@@ -256,7 +249,8 @@ export default class Pie extends React.Component {
             theme="Imooc"
             notMerge={true}
             lazyUpdate={true}
-            style={{ height: 500 }} />
+            style={{ height: 500 }}
+          />
         </Card>
       </div>
     );

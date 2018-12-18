@@ -3,7 +3,7 @@
  */
 
 // import { combineReducers } from 'redux'
-import { type } from '../action';
+import { type } from "../action";
 const bikesData = (state, action) => {
   switch (action.type) {
     case type.SWITCH_MENU:
